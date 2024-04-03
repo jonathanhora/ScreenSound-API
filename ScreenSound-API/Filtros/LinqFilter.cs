@@ -23,5 +23,15 @@ namespace ScreenSound_API.Filtros
                 Console.WriteLine(musica.Nome);
             }
         }
+
+        public static void FiltrarMusicasEmDOh(List<Musica> musicas)
+        {
+            var musicasNoTom = musicas.Where(k => k.Tonalidade.Equals("C#")).Select(m => m.Nome).ToList();
+
+            foreach(var musica in musicasNoTom)
+            {
+                Console.WriteLine(musica);
+            }
+        }
     }
 }
